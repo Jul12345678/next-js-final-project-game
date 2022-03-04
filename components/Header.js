@@ -12,14 +12,17 @@ const headerStyles = css`
 export default function Header() {
   return (
     <header css={headerStyles}>
-      <Link href="/">
-        <a>Home</a>
+      <Link href={'/'}>
+        <a>{'Home'}</a>
       </Link>
-      <Link href="/login">
-        <a>Login</a>
+      <Link href={'/login'}>
+        <a>{'Login'}</a>
       </Link>
-      <Link href="/account">
-        <a>Account</a>
+      <Link href={'/account'}>
+        <a>{'Account'}</a>
+      </Link>
+      <Link href={'/game'}>
+        <a>{'Game'}</a>
       </Link>
     </header>
   );
