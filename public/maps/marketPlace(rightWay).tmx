@@ -3,11 +3,11 @@
  <editorsettings>
   <export target="forestWay.json" format="json"/>
  </editorsettings>
- <tileset firstgid="1" name="forest" tilewidth="16" tileheight="16" tilecount="510" columns="30">
-  <image source="16x16 RPG Starter Set V1.1.png" width="480" height="272"/>
+ <tileset firstgid="1" name="Tileset1" tilewidth="16" tileheight="16" tilecount="510" columns="30">
+  <image source="../tiles/firstTiles.png" width="480" height="272"/>
  </tileset>
- <tileset firstgid="511" name="village" tilewidth="16" tileheight="16" tilecount="855" columns="19">
-  <image source="Serene_Village_16x16.png" width="304" height="720"/>
+ <tileset firstgid="511" name="Tileset2" tilewidth="16" tileheight="16" tilecount="855" columns="19">
+  <image source="../tiles/Serene_Village_16x16.png" width="304" height="720"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="16" height="16">
   <data encoding="csv">

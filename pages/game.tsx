@@ -1,24 +1,24 @@
 import 'phaser';
-import Head from 'next/head';
-import { useEffect } from 'react';
-import Layout from '../components/Layout';
-import Main from '../src/main';
+import Game from '../scenes/Game';
+import Preloader from '../scenes/Preloader';
 
-export default function Game() {
-  return (
-    <>
-      <Layout>
-        <Head>
-          <title>{'Create Next App'}</title>
-          <meta name={'description'} content={'Main Page'} />
-        </Head>
-
-        <h1>{'Game'}</h1>
-      </Layout>
-      <Main />
-    </>
-  );
-}
+new Phaser.Game({
+  type: Phaser.AUTO,
+  width: 800,
+  height: 500,
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 0 },
+      debug: false,
+    },
+  },
+  scene: [Preloader, Game],
+  scale: {
+    zoom: 1,
+  },
+});
+export default () => new Phaser.Game();
 
 // export default function Index() {
 //   useEffect(() => {

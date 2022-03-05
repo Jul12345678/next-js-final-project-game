@@ -31,5 +31,8 @@
     "**/*.cjs",
     "**/*.mjs"
   ],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "build"],
+
+  "typeRoots": ["./node_modules/phaser/types"],
+  "types": ["Phaser"]
 }
