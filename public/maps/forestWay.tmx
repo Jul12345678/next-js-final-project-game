@@ -2596,7 +2596,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="3" name="layer3" width="16" height="16">
+ <layer id="3" name="Collide2" width="16" height="16">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,92,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -2616,7 +2616,7 @@
 427,428,429,430,428,429,430,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="4" name="Tile Layer 4" width="16" height="16">
+ <layer id="4" name="Collide3" width="16" height="16">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -2636,7 +2636,7 @@
 430,427,428,429,430,427,428,429,430,0,0,451,452,453,457,458
 </data>
  </layer>
- <layer id="6" name="Tile Layer 5" width="16" height="16">
+ <layer id="6" name="Collide4" width="16" height="16">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
