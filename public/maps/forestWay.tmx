@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
  <editorsettings>
-  <export target="forestWay.tmj" format="json"/>
+  <export target="forestWay.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="Tileset1" tilewidth="16" tileheight="16" tilecount="510" columns="30">
   <image source="../tiles/firstTiles.png" width="480" height="272"/>
