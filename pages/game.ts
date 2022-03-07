@@ -1,11 +1,16 @@
 import 'phaser';
+import dynamic from 'next/dynamic';
+import Phaser from 'phaser';
+import React, { useEffect, useState } from 'react';
 import Game from '../scenes/Game';
 import Preloader from '../scenes/Preloader';
 
-export default new Phaser.Game({
+const gameConfig = {
   type: Phaser.AUTO,
   width: 250,
   height: 250,
+
+  dom: { createContainer: true },
   physics: {
     default: 'arcade',
     arcade: {
@@ -17,4 +22,9 @@ export default new Phaser.Game({
   scale: {
     zoom: 2,
   },
-});
+};
+
+const phaserGame = new Phaser.Game(gameConfig);
+export default function PhaserGame() {
+  return Array(phaserGame).map(() => Array);
+}
