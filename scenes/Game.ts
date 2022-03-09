@@ -19,6 +19,9 @@ export default class Game extends Phaser.Scene {
     const tileset = map.addTilesetImage('Tileset1', 'tiles');
     map.createLayer('Ground', tileset);
 
+    const aboveLayer = map.createLayer('Above', tileset);
+    aboveLayer.setDepth(20);
+
     const collisionLayer = map.createLayer('Collide', tileset);
     const collisionLayer2 = map.createLayer('Collide2', tileset);
     const collisionLayer3 = map.createLayer('Collide3', tileset);
@@ -52,9 +55,9 @@ export default class Game extends Phaser.Scene {
     // });
     this.eK = this.physics.add.sprite(128, 128, 'EK', 'run-right-1.pgn');
     // scale hitbox
-    this.eK.body.setSize(this.eK.width * 0.4, this.eK.height * 0.66);
+    this.eK.body.setSize(this.eK.width * 0.4, this.eK.height * 0.22);
 
-    this.eK.body.setOffset(this.eK.x * 0.087);
+    this.eK.body.setOffset(this.eK.x * 0.075, this.eK.y * 0.19);
 
     this.anims.create({
       key: 'EK-run-right',
@@ -135,6 +138,7 @@ export default class Game extends Phaser.Scene {
     } else {
       this.eK.play('');
       this.eK.setVelocity(0, 0);
+      this.eK.setDepth(10);
     }
   }
 }

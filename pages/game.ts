@@ -1,9 +1,5 @@
 import 'phaser';
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import Phaser from 'phaser';
-import React, { useEffect, useState } from 'react';
-import Layout from '../components/Layout';
 import Game from '../scenes/Game';
 import Preloader from '../scenes/Preloader';
 
@@ -17,7 +13,7 @@ const gameConfig = {
     default: 'arcade',
     arcade: {
       gravity: { y: 0 },
-      debug: false,
+      debug: true,
     },
   },
   scene: [Preloader, Game],
