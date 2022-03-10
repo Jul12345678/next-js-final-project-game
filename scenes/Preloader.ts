@@ -11,6 +11,11 @@ export default class Preloader extends Phaser.Scene {
     this.load.tilemapTiledJSON('forestWay', 'tiles/forestWay.json');
 
     this.load.atlas('EK', 'character/EK@2x.png', 'character/EK@2x.json');
+    this.load.atlas(
+      'skull',
+      'enemiesTexture/Skull.png',
+      'enemiesTexture/Skull.json',
+    );
   }
   create() {
     this.scene.start('game');
