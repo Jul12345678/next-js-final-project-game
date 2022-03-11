@@ -18,15 +18,23 @@ export default class Game extends Phaser.Scene {
   create() {
     // this.add.image(0, 100, 'tiles');
 
-    const map = this.make.tilemap({ key: 'forestWay' });
-    const tileset = map.addTilesetImage('Tileset1', 'tiles');
+    const map = this.make.tilemap({ key: 'Hills' });
+    const tileset = map.addTilesetImage('Hills', 'tiles');
+    map.createLayer('Ground', tileset);
+    map.createLayer('Ground2', tileset);
+    map.createLayer('Stairs', tileset);
+    map.createLayer('Door', tileset);
+    map.createLayer('CollisionUnderGround', tileset);
+    map.createLayer('Above', tileset);
+    map.createLayer('Ground', tileset);
+    map.createLayer('Ground', tileset);
     map.createLayer('Ground', tileset);
     const aboveLayer = map.createLayer('Above', tileset);
-    aboveLayer.setDepth(20);
-    const collisionLayer = map.createLayer('Collide', tileset);
-    const collisionLayer2 = map.createLayer('Collide2', tileset);
-    const collisionLayer3 = map.createLayer('Collide3', tileset);
-    const collisionLayer4 = map.createLayer('Collide4', tileset);
+    // aboveLayer.setDepth(20);
+    const collisionLayer = map.createLayer('Layer1', tileset);
+    const collisionLayer2 = map.createLayer('Layer2', tileset);
+    const collisionLayer3 = map.createLayer('Layer3', tileset);
+    const collisionLayer4 = map.createLayer('Layer4', tileset);
     collisionLayer.setCollisionByProperty({ collides: true });
     collisionLayer2.setCollisionByProperty({ collides: true });
     collisionLayer3.setCollisionByProperty({ collides: true });
@@ -88,6 +96,7 @@ export default class Game extends Phaser.Scene {
       this.eK.anims.play('EK-direction-down', true);
       this.eK.setVelocity(0, speed);
     } else {
+      this.cameras.main.startFollow(this.eK, true);
       this.eK.play('');
       this.eK.setVelocity(0, 0);
       this.eK.setDepth(10);
