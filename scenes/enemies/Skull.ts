@@ -45,6 +45,10 @@ export default class Skull extends Phaser.Physics.Arcade.Sprite {
       loop: true,
     });
   }
+  destroy(fromScene?: boolean) {
+    this.moveEvent.destroy();
+    super.destroy();
+  }
   private handleTileCollision(
     go: Phaser.GameObjects.GameObject,
     tile: Phaser.Tilemaps.Tile,
