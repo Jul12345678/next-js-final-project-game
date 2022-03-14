@@ -1,12 +1,15 @@
 import 'phaser';
+import './character/Elk';
 import Phaser from 'phaser';
 import { createCharacterAnimation } from './character/CharacterAnimation';
+import EK from './character/Elk';
 import { createSkullAnimation } from './enemies/EnemyAnimations';
 import Skull from './enemies/Skull';
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
-  private eK!: Phaser.Physics.Arcade.Sprite;
+  private eK!: EK;
+  private hit = 0;
   constructor() {
     super('game');
   }
@@ -34,9 +37,7 @@ export default class Game extends Phaser.Scene {
 
     // Character
     createCharacterAnimation(this.anims);
-    this.eK = this.physics.add.sprite(128, 128, 'EK', 'run-right-1.pgn');
-    this.eK.body.setSize(this.eK.width * 0.4, this.eK.height * 0.22);
-    this.eK.body.setOffset(this.eK.x * 0.075, this.eK.y * 0.19);
+    this.eK = this.add.ek(128, 128, 'EK');
 
     this.eK.anims.play('EK');
     this.physics.add.collider(this.eK, collisionLayer);
@@ -62,35 +63,38 @@ export default class Game extends Phaser.Scene {
     // const skull = this.add.sprite(190, 130, 'skull', 'Skull-forward-1.png');
     // skull.anims.play('skull-forward');
     //  End of enemy
+    this.physics.add.collider(
+      skulls,
+      this.eK,
+      this.handlePlayerSkullCollision,
+      undefined,
+      this,
+    );
+  }
+  private handlePlayerSkullCollision(
+    obj1: Phaser.GameObjects.GameObject,
+    obj2: Phaser.GameObjects.GameObject,
+  ) {
+    const skull = obj2 as Skull;
+    const dx = this.eK.x - skull.x;
+    const dy = this.eK.y - skull.y;
+    const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(100);
+
+    this.eK.handleHit(dir);
   }
 
   update(t: number, dt: number) {
     super.update(t, dt);
-    if (!this.cursors || !this.eK) {
+    if (this.hit > 0) {
+      ++this.hit;
+      if (this.hit > 10) {
+        this.hit = 0;
+      }
       return;
     }
-    const speed = 100;
-
-    if (this.cursors.left?.isDown) {
-      this.eK.anims.play('EK-direction-right', true);
-      this.eK.setVelocity(-speed, 0);
-      this.eK.scaleX = -1;
-      this.eK.body.offset.x = 22;
-    } else if (this.cursors.right?.isDown) {
-      this.eK.anims.play('EK-direction-left', true);
-      this.eK.setVelocity(speed, 0);
-      this.eK.scaleX = -1;
-      this.eK.body.offset.x = 22;
-    } else if (this.cursors.up?.isDown) {
-      this.eK.anims.play('EK-direction-up', true);
-      this.eK.setVelocity(0, -speed);
-    } else if (this.cursors.down?.isDown) {
-      this.eK.anims.play('EK-direction-down', true);
-      this.eK.setVelocity(0, speed);
-    } else {
-      this.eK.play('');
-      this.eK.setVelocity(0, 0);
-      this.eK.setDepth(10);
+    if (this.eK) {
+      this.eK.update(this.cursors);
+      this.cameras.main.startFollow(this.eK, true);
     }
   }
 }
