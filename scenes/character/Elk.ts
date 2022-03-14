@@ -42,6 +42,7 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
     this.damaged = 0;
   }
   preUpdate(t: number, dt: number) {
+    super.preUpdate(t, dt);
     switch (this.health) {
       case Health.IDLE:
         break;

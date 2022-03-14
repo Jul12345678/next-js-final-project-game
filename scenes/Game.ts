@@ -19,26 +19,38 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    // this.add.image(0, 100, 'tiles');
+    const map = this.make.tilemap({ key: 'hills' });
 
-    const map = this.make.tilemap({ key: 'forestWay' });
-    const tileset = map.addTilesetImage('Tileset1', 'tiles');
-    map.createLayer('Ground', tileset);
-    const aboveLayer = map.createLayer('Above', tileset);
+    const tilesetHills = map.addTilesetImage('Hills', 'tiles1');
+    const tilesetPlants = map.addTilesetImage('Plants', 'tiles2');
+    const allLayers = [tilesetHills, tilesetPlants];
+
+    map.createLayer('Ground', allLayers);
+    map.createLayer('Ground2', allLayers);
+
+    // map.createLayer('Layer1', allLayers);
+    // map.createLayer('Layer2', allLayers);
+    // map.createLayer('Layer3', allLayers);
+    // map.createLayer('Layer4', allLayers);
+    map.createLayer('Stairs', allLayers);
+    map.createLayer('Door', allLayers);
+
+    const aboveLayer = map.createLayer('Above', allLayers);
     aboveLayer.setDepth(20);
-    const collisionLayer = map.createLayer('Collide', tileset);
-    const collisionLayer2 = map.createLayer('Collide2', tileset);
-    const collisionLayer3 = map.createLayer('Collide3', tileset);
-    const collisionLayer4 = map.createLayer('Collide4', tileset);
-    collisionLayer.setCollisionByProperty({ collides: true });
-    collisionLayer2.setCollisionByProperty({ collides: true });
-    collisionLayer3.setCollisionByProperty({ collides: true });
-    collisionLayer4.setCollisionByProperty({ collides: true });
+
+    const collisionLayer = map.createLayer('Layer1', allLayers);
+    const collisionLayer2 = map.createLayer('Layer2', allLayers);
+    const collisionLayer3 = map.createLayer('Layer3', allLayers);
+    const collisionLayer4 = map.createLayer('Layer4', allLayers);
+    collisionLayer.setCollisionByProperty({ collision: true });
+    collisionLayer2.setCollisionByProperty({ collision: true });
+    collisionLayer4.setCollisionByProperty({ collision: true });
+    collisionLayer3.setCollisionByProperty({ collision: true });
 
     // Character
     createCharacterAnimation(this.anims);
     this.eK = this.add.ek(128, 128, 'EK');
-
+    this.eK.setDepth(10);
     this.eK.anims.play('EK');
     this.physics.add.collider(this.eK, collisionLayer);
     this.physics.add.collider(this.eK, collisionLayer2);

@@ -5,8 +5,8 @@ import Preloader from '../scenes/Preloader';
 
 const gameConfig = {
   type: Phaser.AUTO,
-  width: 250,
-  height: 250,
+  width: 500,
+  height: 500,
 
   dom: { createContainer: true },
   physics: {
@@ -18,7 +18,7 @@ const gameConfig = {
   },
   scene: [Preloader, Game],
   scale: {
-    zoom: 4,
+    zoom: 1,
   },
 };
 const phaserGame = new Phaser.Game(gameConfig);
