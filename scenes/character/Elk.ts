@@ -84,7 +84,9 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
       this.anims.play('Knight-direction-down', true);
       this.setVelocity(0, speed);
     } else {
-      this.play('Knight-direction-down');
+      const parts = this.anims.currentAnim.key.split('-');
+      parts[1] = 'idle';
+      this.play(parts.join('-'));
       this.setVelocity(0, 0);
       this.setDepth(10);
     }

@@ -47,17 +47,15 @@ export default class Game extends Phaser.Scene {
     collisionLayer4.setCollisionByProperty({ collision: true });
     collisionLayer3.setCollisionByProperty({ collision: true });
 
-    // Character
     createCharacterAnimation(this.anims);
     this.eK = this.add.ek(128, 128, 'EK');
     this.eK.setDepth(10);
-    this.eK.anims.play('EK');
+
     this.physics.add.collider(this.eK, collisionLayer);
     this.physics.add.collider(this.eK, collisionLayer2);
     this.physics.add.collider(this.eK, collisionLayer3);
     this.physics.add.collider(this.eK, collisionLayer4);
-  //  this.eK.body.offset.x = 42;
-    // End of Character
+
     // Enemy
     createSkullAnimation(this.anims);
     const skulls = this.physics.add.group({
@@ -72,9 +70,7 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(skulls, collisionLayer2);
     this.physics.add.collider(skulls, collisionLayer3);
     this.physics.add.collider(skulls, collisionLayer4);
-    // skulls.anims.play('skull-forward');
-    // const skull = this.add.sprite(190, 130, 'skull', 'Skull-forward-1.png');
-    // skull.anims.play('skull-forward');
+
     //  End of enemy
     this.physics.add.collider(
       skulls,

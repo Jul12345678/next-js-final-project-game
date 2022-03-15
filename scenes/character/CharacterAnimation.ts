@@ -52,5 +52,49 @@ const createCharacterAnimation = (
     repeat: -1,
     frameRate: 15,
   });
+  anims.create({
+    key: 'Knight-idle-down',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'idle-down-',
+      suffix: '.png',
+    }),
+    repeat: -1,
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-idle-right',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'idle-right-',
+      suffix: '.png',
+    }),
+    repeat: -1,
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-idle-up',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'idle-up-',
+      suffix: '.png',
+    }),
+    repeat: -1,
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-idle-left',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'idle-left-',
+      suffix: '.png',
+    }),
+    repeat: -1,
+    frameRate: 15,
+  });
 };
 export { createCharacterAnimation };
