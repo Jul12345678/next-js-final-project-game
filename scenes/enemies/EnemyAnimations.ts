@@ -3,7 +3,7 @@ import Skull from './Skull';
 
 const createSkullAnimation = (anims: Phaser.Animations.AnimationManager) => {
   anims.create({
-    key: 'skull-forward',
+    key: 'Skull-direction-forward',
     frames: anims.generateFrameNames('skull', {
       start: 1,
       end: 4,
@@ -14,7 +14,7 @@ const createSkullAnimation = (anims: Phaser.Animations.AnimationManager) => {
     frameRate: 3,
   });
   anims.create({
-    key: 'skull-back',
+    key: 'Skull-direction-back',
     frames: anims.generateFrameNames('skull', {
       start: 1,
       end: 4,
@@ -25,7 +25,7 @@ const createSkullAnimation = (anims: Phaser.Animations.AnimationManager) => {
     frameRate: 3,
   });
   anims.create({
-    key: 'skull-left',
+    key: 'Skull-direction-left',
     frames: anims.generateFrameNames('skull', {
       start: 1,
       end: 4,
@@ -36,7 +36,7 @@ const createSkullAnimation = (anims: Phaser.Animations.AnimationManager) => {
     frameRate: 3,
   });
   anims.create({
-    key: 'skull-right',
+    key: 'Skull-direction-right',
     frames: anims.generateFrameNames('skull', {
       start: 1,
       end: 4,

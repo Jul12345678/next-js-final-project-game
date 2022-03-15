@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import createSkullAnimation from '../enemies/EnemyAnimations';
 
 enum Direction {
   UP = 0,
@@ -64,18 +65,22 @@ export default class Skull extends Phaser.Physics.Arcade.Sprite {
     const speed = 50;
     switch (this.direction) {
       case Direction.UP:
+        this.anims.play('Skull-direction-back');
         this.setVelocity(0, -speed);
         break;
 
       case Direction.DOWN:
+        this.anims.play('Skull-direction-forward');
         this.setVelocity(0, speed);
         break;
 
       case Direction.LEFT:
+        this.anims.play('Skull-direction-right');
         this.setVelocity(speed, 0);
         break;
 
       case Direction.RIGHT:
+        this.anims.play('Skull-direction-left');
         this.setVelocity(-speed, 0);
         break;
     }
