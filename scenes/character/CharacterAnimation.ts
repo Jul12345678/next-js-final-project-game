@@ -5,12 +5,12 @@ const createCharacterAnimation = (
   anims: Phaser.Animations.AnimationManager,
 ) => {
   anims.create({
-    key: 'EK-run-right',
-    frames: [{ key: 'EK', frame: 'run-right-1.png' }],
+    key: 'Knight-run-right',
+    frames: [{ key: 'Knight', frame: 'run-right-1.png' }],
   });
   anims.create({
-    key: 'EK-direction-right',
-    frames: anims.generateFrameNames('EK', {
+    key: 'Knight-direction-right',
+    frames: anims.generateFrameNames('Knight', {
       start: 1,
       end: 4,
       prefix: 'run-right-',
@@ -20,8 +20,8 @@ const createCharacterAnimation = (
     frameRate: 15,
   });
   anims.create({
-    key: 'EK-direction-left',
-    frames: anims.generateFrameNames('EK', {
+    key: 'Knight-direction-left',
+    frames: anims.generateFrameNames('Knight', {
       start: 1,
       end: 4,
       prefix: 'run-left-',
@@ -31,22 +31,22 @@ const createCharacterAnimation = (
     frameRate: 15,
   });
   anims.create({
-    key: 'EK-direction-up',
-    frames: anims.generateFrameNames('EK', {
+    key: 'Knight-direction-up',
+    frames: anims.generateFrameNames('Knight', {
       start: 1,
       end: 4,
-      prefix: 'run-left-',
+      prefix: 'run-up-',
       suffix: '.png',
     }),
     repeat: -1,
     frameRate: 15,
   });
   anims.create({
-    key: 'EK-direction-down',
-    frames: anims.generateFrameNames('EK', {
+    key: 'Knight-direction-down',
+    frames: anims.generateFrameNames('Knight', {
       start: 1,
       end: 4,
-      prefix: 'run-right-',
+      prefix: 'run-down-',
       suffix: '.png',
     }),
     repeat: -1,

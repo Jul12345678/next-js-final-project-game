@@ -30,7 +30,7 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
   ) {
     super(scene, x, y, texture, frame);
 
-    this.play('');
+    this.play('Knight-direction-down');
   }
   handleHit(dir: Phaser.Math.Vector2) {
     if (this.health === Health.DAMAGE) {
@@ -68,23 +68,23 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
     const speed = 100;
 
     if (cursors.left?.isDown) {
-      this.anims.play('EK-direction-right', true);
+      this.anims.play('Knight-direction-right', true);
       this.setVelocity(-speed, 0);
       this.scaleX = -1;
-      this.body.offset.x = 22;
+      this.body.offset.x = 35;
     } else if (cursors.right?.isDown) {
-      this.anims.play('EK-direction-left', true);
+      this.anims.play('Knight-direction-left', true);
       this.setVelocity(speed, 0);
       this.scaleX = -1;
-      this.body.offset.x = 22;
+      this.body.offset.x = 35;
     } else if (cursors.up?.isDown) {
-      this.anims.play('EK-direction-up', true);
+      this.anims.play('Knight-direction-up', true);
       this.setVelocity(0, -speed);
     } else if (cursors.down?.isDown) {
-      this.anims.play('EK-direction-down', true);
+      this.anims.play('Knight-direction-down', true);
       this.setVelocity(0, speed);
     } else {
-      this.play('');
+      this.play('Knight-direction-down');
       this.setVelocity(0, 0);
       this.setDepth(10);
     }
@@ -109,8 +109,9 @@ Phaser.GameObjects.GameObjectFactory.register(
       sprite,
       Phaser.Physics.Arcade.DYNAMIC_BODY,
     );
-    sprite.body.setSize(sprite.width * 0.4, sprite.height * 0.22);
-    sprite.body.setOffset(sprite.x * 0.075, sprite.y * 0.19);
+    sprite.body.setSize(sprite.width * 0.12, sprite.height * 0.1);
+    sprite.body.setOffset(sprite.x * 5.4, sprite.y * 0.25);
+
     return sprite;
   },
 );

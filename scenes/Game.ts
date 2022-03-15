@@ -56,6 +56,7 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(this.eK, collisionLayer2);
     this.physics.add.collider(this.eK, collisionLayer3);
     this.physics.add.collider(this.eK, collisionLayer4);
+  //  this.eK.body.offset.x = 42;
     // End of Character
     // Enemy
     createSkullAnimation(this.anims);
