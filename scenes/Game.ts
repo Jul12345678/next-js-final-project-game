@@ -5,6 +5,7 @@ import { createCharacterAnimation } from './character/CharacterAnimation';
 import EK from './character/Elk';
 import { createSkullAnimation } from './enemies/EnemyAnimations';
 import Skull from './enemies/Skull';
+import { events } from './events/Events';
 
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -19,6 +20,7 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
+    this.scene.run('game-ui');
     const map = this.make.tilemap({ key: 'hills' });
 
     const tilesetHills = map.addTilesetImage('Hills', 'tiles1');
@@ -90,6 +92,7 @@ export default class Game extends Phaser.Scene {
     const dir = new Phaser.Math.Vector2(dx, dy).normalize().scale(100);
 
     this.eK.handleHit(dir);
+    events.emit('character-health', this.eK.hp);
   }
 
   update(t: number, dt: number) {
@@ -104,6 +107,7 @@ export default class Game extends Phaser.Scene {
     if (this.eK) {
       this.eK.update(this.cursors);
       this.cameras.main.startFollow(this.eK, true);
+      this.cameras.main.zoom = 1;
     }
   }
 }

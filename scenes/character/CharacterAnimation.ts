@@ -96,5 +96,16 @@ const createCharacterAnimation = (
     repeat: -1,
     frameRate: 15,
   });
+  anims.create({
+    key: 'Knight-death',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'death-',
+      suffix: '.png',
+    }),
+
+    frameRate: 10,
+  });
 };
 export { createCharacterAnimation };

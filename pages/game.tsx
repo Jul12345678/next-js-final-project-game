@@ -2,11 +2,12 @@ import 'phaser';
 import Phaser from 'phaser';
 import Game from '../scenes/Game';
 import Preloader from '../scenes/Preloader';
+import Ui from '../scenes/Ui';
 
 const gameConfig = {
   type: Phaser.AUTO,
-  width: 500,
-  height: 500,
+  width: 300,
+  height: 300,
 
   dom: { createContainer: true },
   physics: {
@@ -16,9 +17,9 @@ const gameConfig = {
       debug: false,
     },
   },
-  scene: [Preloader, Game],
+  scene: [Preloader, Game, Ui],
   scale: {
-    zoom: 2,
+    zoom: 3,
   },
 };
 const phaserGame = new Phaser.Game(gameConfig);

@@ -1,11 +1,11 @@
 {
   "textures": [
     {
-      "image": "texture",
+      "image": "Idle+Walk",
       "format": "RGBA8888",
       "size": {
-        "w": 25,
-        "h": 254
+        "w": 20,
+        "h": 271
       },
       "scale": 1,
       "frames": [
@@ -178,7 +178,7 @@
           }
         },
         {
-          "filename": "run-up-3.png",
+          "filename": "run-up-2.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -199,6 +199,27 @@
           }
         },
         {
+          "filename": "run-up-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 0,
+            "y": 153,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
           "filename": "idle-left-1.png",
           "rotated": false,
           "trimmed": true,
@@ -214,7 +235,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 153,
+            "y": 170,
             "w": 9,
             "h": 17
           }
@@ -235,7 +256,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 170,
+            "y": 187,
             "w": 9,
             "h": 17
           }
@@ -256,7 +277,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 187,
+            "y": 204,
             "w": 9,
             "h": 17
           }
@@ -277,7 +298,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 204,
+            "y": 221,
             "w": 9,
             "h": 17
           }
@@ -298,7 +319,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 221,
+            "y": 238,
             "w": 9,
             "h": 17
           }
@@ -319,7 +340,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 238,
+            "y": 255,
             "w": 11,
             "h": 16
           }
@@ -340,7 +361,7 @@
           },
           "frame": {
             "x": 9,
-            "y": 153,
+            "y": 170,
             "w": 11,
             "h": 16
           }
@@ -361,7 +382,7 @@
           },
           "frame": {
             "x": 9,
-            "y": 169,
+            "y": 186,
             "w": 9,
             "h": 16
           }
@@ -382,93 +403,9 @@
           },
           "frame": {
             "x": 9,
-            "y": 185,
+            "y": 202,
             "w": 9,
             "h": 16
-          }
-        },
-        {
-          "filename": "death-1.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 28,
-            "y": 24,
-            "w": 8,
-            "h": 15
-          },
-          "frame": {
-            "x": 9,
-            "y": 201,
-            "w": 8,
-            "h": 15
-          }
-        },
-        {
-          "filename": "death-2.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 28,
-            "y": 24,
-            "w": 8,
-            "h": 15
-          },
-          "frame": {
-            "x": 9,
-            "y": 216,
-            "w": 8,
-            "h": 15
-          }
-        },
-        {
-          "filename": "death-3.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 25,
-            "y": 31,
-            "w": 15,
-            "h": 10
-          },
-          "frame": {
-            "x": 10,
-            "y": 51,
-            "w": 15,
-            "h": 10
-          }
-        },
-        {
-          "filename": "death-4.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 28,
-            "y": 30,
-            "w": 8,
-            "h": 9
-          },
-          "frame": {
-            "x": 11,
-            "y": 0,
-            "w": 8,
-            "h": 9
           }
         },
         {
@@ -487,7 +424,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 170,
+            "y": 187,
             "w": 9,
             "h": 17
           }
@@ -508,7 +445,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 170,
+            "y": 187,
             "w": 9,
             "h": 17
           }
@@ -550,8 +487,29 @@
           },
           "frame": {
             "x": 0,
-            "y": 187,
+            "y": 204,
             "w": 9,
+            "h": 17
+          }
+        },
+        {
+          "filename": "run-up-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 0,
+            "y": 136,
+            "w": 10,
             "h": 17
           }
         }
