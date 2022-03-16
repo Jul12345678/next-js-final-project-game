@@ -11,6 +11,8 @@ export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private eK!: EK;
   private hit = 0;
+
+  private playerSkullsCollider?: Phaser.Physics.Arcade.Collider;
   constructor() {
     super('game');
   }
@@ -22,6 +24,10 @@ export default class Game extends Phaser.Scene {
   create() {
     this.scene.run('game-ui');
     const map = this.make.tilemap({ key: 'hills' });
+
+    const rangedAttack = this.physics.add.group({
+      classType: Phaser.Physics.Arcade.Image,
+    });
 
     const tilesetHills = map.addTilesetImage('Hills', 'tiles1');
     const tilesetPlants = map.addTilesetImage('Plants', 'tiles2');
@@ -72,9 +78,19 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(skulls, collisionLayer2);
     this.physics.add.collider(skulls, collisionLayer3);
     this.physics.add.collider(skulls, collisionLayer4);
-
-    //  End of enemy
+    this.physics.add.collider(rangedAttack, collisionLayer);
+    this.physics.add.collider(rangedAttack, collisionLayer2);
+    this.physics.add.collider(rangedAttack, collisionLayer3);
+    this.physics.add.collider(rangedAttack, collisionLayer4);
     this.physics.add.collider(
+      rangedAttack,
+      skulls,
+      this.hanldeRangedAttackSkullCollision,
+      undefined,
+      this,
+    );
+    //  End of enemy
+    this.playerSkullsCollider = this.physics.add.collider(
       skulls,
       this.eK,
       this.handlePlayerSkullCollision,
@@ -82,6 +98,10 @@ export default class Game extends Phaser.Scene {
       this,
     );
   }
+  private hanldeRangedAttackSkullCollision(
+    obj1: Phaser.GameObjects.GameObject,
+    obj2: Phaser.GameObjects.GameObjects,
+  ) {}
   private handlePlayerSkullCollision(
     obj1: Phaser.GameObjects.GameObject,
     obj2: Phaser.GameObjects.GameObject,
@@ -93,6 +113,10 @@ export default class Game extends Phaser.Scene {
 
     this.eK.handleHit(dir);
     events.emit('character-health', this.eK.hp);
+
+    if (this.eK.hp <= 0) {
+      this.playerSkullsCollider?.destroy();
+    }
   }
 
   update(t: number, dt: number) {

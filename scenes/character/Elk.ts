@@ -83,7 +83,7 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
     if (this.health === Health.DEAD) {
       const speed = 0;
       this.setVelocity(0, speed);
-      // this.anims.play('Knight-death', true);
+
       return;
     }
     if (this.health === Health.DAMAGE) {

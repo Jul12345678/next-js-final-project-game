@@ -107,5 +107,93 @@ const createCharacterAnimation = (
 
     frameRate: 10,
   });
+  anims.create({
+    key: 'Knight-attack-left',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'attack-left-',
+      suffix: '.png',
+    }),
+
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-attack-right',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'attack-right-',
+      suffix: '.png',
+    }),
+
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-attack-up',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'attack-up-',
+      suffix: '.png',
+    }),
+
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-attack-down',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'attack-down-',
+      suffix: '.png',
+    }),
+
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-roll-left',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'roll-left-',
+      suffix: '.png',
+    }),
+
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-roll-right',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'roll-right-',
+      suffix: '.png',
+    }),
+
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-roll-up',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'roll-up-',
+      suffix: '.png',
+    }),
+
+    frameRate: 15,
+  });
+  anims.create({
+    key: 'Knight-roll-down',
+    frames: anims.generateFrameNames('Knight', {
+      start: 1,
+      end: 4,
+      prefix: 'roll-down-',
+      suffix: '.png',
+    }),
+
+    frameRate: 15,
+  });
 };
 export { createCharacterAnimation };

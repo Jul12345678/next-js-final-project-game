@@ -4,11 +4,473 @@
       "image": "texture",
       "format": "RGBA8888",
       "size": {
-        "w": 25,
-        "h": 254
+        "w": 200,
+        "h": 119
       },
       "scale": 1,
       "frames": [
+        {
+          "filename": "attack-down-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 22,
+            "y": 25,
+            "w": 23,
+            "h": 21
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 23,
+            "h": 21
+          }
+        },
+        {
+          "filename": "attack-down-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 17,
+            "y": 25,
+            "w": 23,
+            "h": 21
+          },
+          "frame": {
+            "x": 23,
+            "y": 0,
+            "w": 23,
+            "h": 21
+          }
+        },
+        {
+          "filename": "attack-left-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 17,
+            "y": 25,
+            "w": 23,
+            "h": 21
+          },
+          "frame": {
+            "x": 46,
+            "y": 0,
+            "w": 23,
+            "h": 21
+          }
+        },
+        {
+          "filename": "attack-right-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 24,
+            "y": 25,
+            "w": 23,
+            "h": 21
+          },
+          "frame": {
+            "x": 69,
+            "y": 0,
+            "w": 23,
+            "h": 21
+          }
+        },
+        {
+          "filename": "attack-up-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 19,
+            "y": 18,
+            "w": 23,
+            "h": 21
+          },
+          "frame": {
+            "x": 92,
+            "y": 0,
+            "w": 23,
+            "h": 21
+          }
+        },
+        {
+          "filename": "attack-up-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 24,
+            "y": 18,
+            "w": 23,
+            "h": 21
+          },
+          "frame": {
+            "x": 115,
+            "y": 0,
+            "w": 23,
+            "h": 21
+          }
+        },
+        {
+          "filename": "attack-down-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 16,
+            "y": 25,
+            "w": 21,
+            "h": 19
+          },
+          "frame": {
+            "x": 138,
+            "y": 0,
+            "w": 21,
+            "h": 19
+          }
+        },
+        {
+          "filename": "attack-down-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 16,
+            "y": 25,
+            "w": 21,
+            "h": 14
+          },
+          "frame": {
+            "x": 159,
+            "y": 0,
+            "w": 21,
+            "h": 14
+          }
+        },
+        {
+          "filename": "attack-up-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 20,
+            "w": 20,
+            "h": 19
+          },
+          "frame": {
+            "x": 180,
+            "y": 0,
+            "w": 20,
+            "h": 19
+          }
+        },
+        {
+          "filename": "attack-up-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 24,
+            "w": 20,
+            "h": 15
+          },
+          "frame": {
+            "x": 159,
+            "y": 14,
+            "w": 20,
+            "h": 15
+          }
+        },
+        {
+          "filename": "attack-left-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 17,
+            "y": 25,
+            "w": 19,
+            "h": 22
+          },
+          "frame": {
+            "x": 138,
+            "y": 19,
+            "w": 19,
+            "h": 22
+          }
+        },
+        {
+          "filename": "attack-right-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 25,
+            "w": 19,
+            "h": 22
+          },
+          "frame": {
+            "x": 0,
+            "y": 21,
+            "w": 19,
+            "h": 22
+          }
+        },
+        {
+          "filename": "roll-left-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 26,
+            "w": 19,
+            "h": 13
+          },
+          "frame": {
+            "x": 19,
+            "y": 21,
+            "w": 19,
+            "h": 13
+          }
+        },
+        {
+          "filename": "roll-right-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 18,
+            "y": 26,
+            "w": 19,
+            "h": 13
+          },
+          "frame": {
+            "x": 38,
+            "y": 21,
+            "w": 19,
+            "h": 13
+          }
+        },
+        {
+          "filename": "death-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 25,
+            "y": 31,
+            "w": 15,
+            "h": 10
+          },
+          "frame": {
+            "x": 57,
+            "y": 21,
+            "w": 15,
+            "h": 10
+          }
+        },
+        {
+          "filename": "attack-left-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 25,
+            "w": 14,
+            "h": 21
+          },
+          "frame": {
+            "x": 72,
+            "y": 21,
+            "w": 14,
+            "h": 21
+          }
+        },
+        {
+          "filename": "attack-right-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 25,
+            "w": 14,
+            "h": 21
+          },
+          "frame": {
+            "x": 57,
+            "y": 31,
+            "w": 14,
+            "h": 21
+          }
+        },
+        {
+          "filename": "attack-left-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 25,
+            "w": 14,
+            "h": 17
+          },
+          "frame": {
+            "x": 19,
+            "y": 42,
+            "w": 14,
+            "h": 17
+          }
+        },
+        {
+          "filename": "attack-right-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 23,
+            "y": 25,
+            "w": 14,
+            "h": 17
+          },
+          "frame": {
+            "x": 0,
+            "y": 43,
+            "w": 14,
+            "h": 17
+          }
+        },
+        {
+          "filename": "roll-right-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 26,
+            "y": 29,
+            "w": 12,
+            "h": 18
+          },
+          "frame": {
+            "x": 33,
+            "y": 34,
+            "w": 12,
+            "h": 18
+          }
+        },
+        {
+          "filename": "roll-left-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 26,
+            "y": 29,
+            "w": 12,
+            "h": 17
+          },
+          "frame": {
+            "x": 45,
+            "y": 34,
+            "w": 12,
+            "h": 17
+          }
+        },
+        {
+          "filename": "block-up.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 22,
+            "w": 11,
+            "h": 17
+          },
+          "frame": {
+            "x": 45,
+            "y": 51,
+            "w": 11,
+            "h": 17
+          }
+        },
         {
           "filename": "idle-down-1.png",
           "rotated": false,
@@ -24,8 +486,8 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 0,
+            "x": 33,
+            "y": 52,
             "w": 11,
             "h": 17
           }
@@ -45,10 +507,31 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 17,
+            "x": 14,
+            "y": 59,
             "w": 11,
             "h": 17
+          }
+        },
+        {
+          "filename": "death-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 24,
+            "w": 8,
+            "h": 15
+          },
+          "frame": {
+            "x": 25,
+            "y": 59,
+            "w": 8,
+            "h": 15
           }
         },
         {
@@ -67,13 +550,13 @@
           },
           "frame": {
             "x": 0,
-            "y": 34,
+            "y": 60,
             "w": 11,
             "h": 17
           }
         },
         {
-          "filename": "run-down-1.png",
+          "filename": "idle-down-2.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -82,19 +565,40 @@
           },
           "spriteSourceSize": {
             "x": 26,
-            "y": 22,
-            "w": 10,
-            "h": 17
+            "y": 23,
+            "w": 11,
+            "h": 16
           },
           "frame": {
-            "x": 0,
-            "y": 51,
-            "w": 10,
-            "h": 17
+            "x": 86,
+            "y": 21,
+            "w": 11,
+            "h": 16
           }
         },
         {
-          "filename": "run-down-3.png",
+          "filename": "idle-up-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 23,
+            "w": 11,
+            "h": 16
+          },
+          "frame": {
+            "x": 97,
+            "y": 21,
+            "w": 11,
+            "h": 16
+          }
+        },
+        {
+          "filename": "roll-up-4.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -103,19 +607,19 @@
           },
           "spriteSourceSize": {
             "x": 26,
-            "y": 22,
-            "w": 10,
-            "h": 17
+            "y": 24,
+            "w": 11,
+            "h": 15
           },
           "frame": {
-            "x": 0,
-            "y": 68,
-            "w": 10,
-            "h": 17
+            "x": 108,
+            "y": 21,
+            "w": 11,
+            "h": 15
           }
         },
         {
-          "filename": "run-left-1.png",
+          "filename": "roll-left-1.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -124,78 +628,15 @@
           },
           "spriteSourceSize": {
             "x": 27,
-            "y": 22,
+            "y": 18,
             "w": 10,
-            "h": 17
+            "h": 21
           },
           "frame": {
-            "x": 0,
-            "y": 85,
+            "x": 119,
+            "y": 21,
             "w": 10,
-            "h": 17
-          }
-        },
-        {
-          "filename": "run-right-1.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 27,
-            "y": 22,
-            "w": 10,
-            "h": 17
-          },
-          "frame": {
-            "x": 0,
-            "y": 102,
-            "w": 10,
-            "h": 17
-          }
-        },
-        {
-          "filename": "run-up-1.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 28,
-            "y": 22,
-            "w": 10,
-            "h": 17
-          },
-          "frame": {
-            "x": 0,
-            "y": 119,
-            "w": 10,
-            "h": 17
-          }
-        },
-        {
-          "filename": "run-up-3.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 28,
-            "y": 22,
-            "w": 10,
-            "h": 17
-          },
-          "frame": {
-            "x": 0,
-            "y": 136,
-            "w": 10,
-            "h": 17
+            "h": 21
           }
         },
         {
@@ -213,8 +654,8 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 153,
+            "x": 129,
+            "y": 21,
             "w": 9,
             "h": 17
           }
@@ -234,10 +675,430 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 170,
+            "x": 129,
+            "y": 38,
             "w": 9,
             "h": 17
+          }
+        },
+        {
+          "filename": "roll-right-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 18,
+            "w": 10,
+            "h": 21
+          },
+          "frame": {
+            "x": 108,
+            "y": 36,
+            "w": 10,
+            "h": 21
+          }
+        },
+        {
+          "filename": "roll-down-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 23,
+            "w": 10,
+            "h": 19
+          },
+          "frame": {
+            "x": 118,
+            "y": 42,
+            "w": 10,
+            "h": 19
+          }
+        },
+        {
+          "filename": "roll-left-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 21,
+            "w": 10,
+            "h": 18
+          },
+          "frame": {
+            "x": 118,
+            "y": 61,
+            "w": 10,
+            "h": 18
+          }
+        },
+        {
+          "filename": "roll-right-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 21,
+            "w": 10,
+            "h": 18
+          },
+          "frame": {
+            "x": 86,
+            "y": 37,
+            "w": 10,
+            "h": 18
+          }
+        },
+        {
+          "filename": "block-down.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 26,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 96,
+            "y": 42,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "block-left.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 106,
+            "y": 57,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "block-right.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 71,
+            "y": 42,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "roll-down-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 71,
+            "y": 59,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "run-down-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 26,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 81,
+            "y": 55,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "run-down-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 26,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 81,
+            "y": 72,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "run-left-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 91,
+            "y": 72,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "roll-down-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 26,
+            "w": 10,
+            "h": 13
+          },
+          "frame": {
+            "x": 91,
+            "y": 59,
+            "w": 10,
+            "h": 13
+          }
+        },
+        {
+          "filename": "run-right-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 56,
+            "y": 52,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "run-up-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 44,
+            "y": 68,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "run-up-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 22,
+            "w": 10,
+            "h": 17
+          },
+          "frame": {
+            "x": 33,
+            "y": 69,
+            "w": 10,
+            "h": 17
+          }
+        },
+        {
+          "filename": "death-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 24,
+            "w": 8,
+            "h": 15
+          },
+          "frame": {
+            "x": 25,
+            "y": 85,
+            "w": 8,
+            "h": 15
+          }
+        },
+        {
+          "filename": "death-4.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 28,
+            "y": 30,
+            "w": 8,
+            "h": 9
+          },
+          "frame": {
+            "x": 25,
+            "y": 74,
+            "w": 8,
+            "h": 9
+          }
+        },
+        {
+          "filename": "roll-down-1.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 23,
+            "w": 10,
+            "h": 16
+          },
+          "frame": {
+            "x": 11,
+            "y": 76,
+            "w": 10,
+            "h": 16
+          }
+        },
+        {
+          "filename": "roll-up-2.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 26,
+            "w": 10,
+            "h": 14
+          },
+          "frame": {
+            "x": 0,
+            "y": 77,
+            "w": 10,
+            "h": 14
+          }
+        },
+        {
+          "filename": "roll-up-3.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 64,
+            "h": 64
+          },
+          "spriteSourceSize": {
+            "x": 27,
+            "y": 28,
+            "w": 10,
+            "h": 11
+          },
+          "frame": {
+            "x": 0,
+            "y": 91,
+            "w": 10,
+            "h": 11
           }
         },
         {
@@ -255,8 +1116,8 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 187,
+            "x": 10,
+            "y": 92,
             "w": 9,
             "h": 17
           }
@@ -277,7 +1138,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 204,
+            "y": 102,
             "w": 9,
             "h": 17
           }
@@ -297,52 +1158,10 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 221,
+            "x": 101,
+            "y": 74,
             "w": 9,
             "h": 17
-          }
-        },
-        {
-          "filename": "idle-down-2.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 26,
-            "y": 23,
-            "w": 11,
-            "h": 16
-          },
-          "frame": {
-            "x": 0,
-            "y": 238,
-            "w": 11,
-            "h": 16
-          }
-        },
-        {
-          "filename": "idle-up-2.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 27,
-            "y": 23,
-            "w": 11,
-            "h": 16
-          },
-          "frame": {
-            "x": 9,
-            "y": 153,
-            "w": 11,
-            "h": 16
           }
         },
         {
@@ -360,8 +1179,8 @@
             "h": 16
           },
           "frame": {
-            "x": 9,
-            "y": 169,
+            "x": 54,
+            "y": 69,
             "w": 9,
             "h": 16
           }
@@ -381,14 +1200,14 @@
             "h": 16
           },
           "frame": {
-            "x": 9,
-            "y": 185,
+            "x": 63,
+            "y": 76,
             "w": 9,
             "h": 16
           }
         },
         {
-          "filename": "death-1.png",
+          "filename": "roll-up-1.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -396,79 +1215,16 @@
             "h": 64
           },
           "spriteSourceSize": {
-            "x": 28,
-            "y": 24,
-            "w": 8,
-            "h": 15
+            "x": 27,
+            "y": 23,
+            "w": 9,
+            "h": 16
           },
           "frame": {
-            "x": 9,
-            "y": 201,
-            "w": 8,
-            "h": 15
-          }
-        },
-        {
-          "filename": "death-2.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 28,
-            "y": 24,
-            "w": 8,
-            "h": 15
-          },
-          "frame": {
-            "x": 9,
-            "y": 216,
-            "w": 8,
-            "h": 15
-          }
-        },
-        {
-          "filename": "death-3.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 25,
-            "y": 31,
-            "w": 15,
-            "h": 10
-          },
-          "frame": {
-            "x": 10,
-            "y": 51,
-            "w": 15,
-            "h": 10
-          }
-        },
-        {
-          "filename": "death-4.png",
-          "rotated": false,
-          "trimmed": true,
-          "sourceSize": {
-            "w": 64,
-            "h": 64
-          },
-          "spriteSourceSize": {
-            "x": 28,
-            "y": 30,
-            "w": 8,
-            "h": 9
-          },
-          "frame": {
-            "x": 11,
-            "y": 0,
-            "w": 8,
-            "h": 9
+            "x": 72,
+            "y": 76,
+            "w": 9,
+            "h": 16
           }
         },
         {
@@ -486,8 +1242,8 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 170,
+            "x": 129,
+            "y": 38,
             "w": 9,
             "h": 17
           }
@@ -507,8 +1263,8 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 170,
+            "x": 129,
+            "y": 38,
             "w": 9,
             "h": 17
           }
@@ -529,7 +1285,7 @@
           },
           "frame": {
             "x": 0,
-            "y": 34,
+            "y": 60,
             "w": 11,
             "h": 17
           }
@@ -549,8 +1305,8 @@
             "h": 17
           },
           "frame": {
-            "x": 0,
-            "y": 187,
+            "x": 10,
+            "y": 92,
             "w": 9,
             "h": 17
           }
