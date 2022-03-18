@@ -116,7 +116,7 @@ const createCharacterAnimation = (
       suffix: '.png',
     }),
 
-    frameRate: 15,
+    frameRate: 10,
   });
   anims.create({
     key: 'Knight-attack-right',
@@ -127,7 +127,7 @@ const createCharacterAnimation = (
       suffix: '.png',
     }),
 
-    frameRate: 15,
+    frameRate: 10,
   });
   anims.create({
     key: 'Knight-attack-up',
@@ -138,7 +138,7 @@ const createCharacterAnimation = (
       suffix: '.png',
     }),
 
-    frameRate: 15,
+    frameRate: 10,
   });
   anims.create({
     key: 'Knight-attack-down',
@@ -149,7 +149,7 @@ const createCharacterAnimation = (
       suffix: '.png',
     }),
 
-    frameRate: 15,
+    frameRate: 10,
   });
   anims.create({
     key: 'Knight-roll-left',

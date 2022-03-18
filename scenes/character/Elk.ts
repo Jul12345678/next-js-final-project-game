@@ -23,6 +23,8 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
   private health = Health.IDLE;
   private damaged = 0;
   private _hp = 4;
+  private rangedAttack?: Phaser.Physics.Arcade.Group;
+
   get hp() {
     return this._hp;
   }
@@ -37,6 +39,10 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
 
     this.play('Knight-direction-down');
   }
+  setRangedAttack(rangedAttack: Phaser.Physics.Arcade.Group) {
+    this.rangedAttack = rangedAttack;
+  }
+
   handleHit(dir: Phaser.Math.Vector2) {
     if (this._hp <= 0) {
       return;
@@ -60,6 +66,74 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
       this.setTint(0xff0000);
       this.health = Health.DAMAGE;
       this.damaged = 0;
+    }
+  }
+  private shootRangedAttack() {
+    const parts = this.anims.currentAnim.key.split('-');
+    const direction = parts[2];
+    const vector = new Phaser.Math.Vector2(0, 0);
+    if (!this.rangedAttack) {
+      return;
+    }
+    switch (direction) {
+      case 'up':
+        vector.y = -2;
+        const rangedAttackUp = this.rangedAttack.get(
+          this.x,
+          this.y,
+          'rangedAttack-up',
+        ) as Phaser.Physics.Arcade.Image;
+
+        this.anims.play('Knight-attack-up');
+        rangedAttackUp.setVelocity(vector.x * 200, vector.y * 200);
+        rangedAttackUp.setActive(true);
+        rangedAttackUp.setVisible(true);
+        break;
+
+      case 'down':
+        vector.y = 2;
+        const rangedAttackDown = this.rangedAttack.get(
+          this.x,
+          this.y,
+          'rangedAttack-down',
+        ) as Phaser.Physics.Arcade.Image;
+
+        this.anims.play('Knight-attack-down');
+
+        rangedAttackDown.setVelocity(vector.x * 200, vector.y * 200);
+        this.rangedAttack.setActive(true);
+        this.rangedAttack.setVisible(true);
+        break;
+      case 'right':
+        if (this.scaleX) {
+          vector.x = -2;
+          const rangedAttackRight = this.rangedAttack.get(
+            this.x,
+            this.y,
+            'rangedAttack-left',
+          ) as Phaser.Physics.Arcade.Image;
+
+          this.anims.play('Knight-attack-right');
+          rangedAttackRight.setVelocity(vector.x * 200, vector.y * 200);
+        }
+        this.rangedAttack.setActive(true);
+        this.rangedAttack.setVisible(true);
+        break;
+      case 'left':
+        if (this.scaleX) {
+          vector.x = 2;
+          const rangedAttackLeft = this.rangedAttack.get(
+            this.x,
+            this.y,
+            'rangedAttack-right',
+          ) as Phaser.Physics.Arcade.Image;
+
+          this.anims.play('Knight-attack-left');
+          rangedAttackLeft.setVelocity(vector.x * 200, vector.y * 200);
+        }
+        this.rangedAttack.setActive(true);
+        this.rangedAttack.setVisible(true);
+        break;
     }
   }
   preUpdate(t: number, dt: number) {
@@ -92,7 +166,10 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
     if (!cursors) {
       return;
     }
-
+    if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
+      this.shootRangedAttack();
+      return;
+    }
     const speed = 100;
 
     if (cursors.left?.isDown) {

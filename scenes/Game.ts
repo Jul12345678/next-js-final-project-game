@@ -10,8 +10,9 @@ import { events } from './events/Events';
 export default class Game extends Phaser.Scene {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   private eK!: EK;
+  private rangedAttack!: Phaser.Physics.Arcade.Group;
   private hit = 0;
-
+  private skulls!: Phaser.Physics.Arcade.Group;
   private playerSkullsCollider?: Phaser.Physics.Arcade.Collider;
   constructor() {
     super('game');
@@ -25,7 +26,7 @@ export default class Game extends Phaser.Scene {
     this.scene.run('game-ui');
     const map = this.make.tilemap({ key: 'hills' });
 
-    const rangedAttack = this.physics.add.group({
+    this.rangedAttack = this.physics.add.group({
       classType: Phaser.Physics.Arcade.Image,
     });
 
@@ -57,6 +58,7 @@ export default class Game extends Phaser.Scene {
 
     createCharacterAnimation(this.anims);
     this.eK = this.add.ek(128, 128, 'EK');
+    this.eK.setRangedAttack(this.rangedAttack);
     this.eK.setDepth(10);
 
     this.physics.add.collider(this.eK, collisionLayer);
@@ -66,6 +68,7 @@ export default class Game extends Phaser.Scene {
 
     // Enemy
     createSkullAnimation(this.anims);
+
     const skulls = this.physics.add.group({
       classType: Skull,
       createCallback: (go) => {
@@ -73,17 +76,48 @@ export default class Game extends Phaser.Scene {
         skulGo.body.onCollide = true;
       },
     });
-    skulls.get(180, 130, 'skull');
+    skulls.get(160, 120, 'skull');
     this.physics.add.collider(skulls, collisionLayer);
     this.physics.add.collider(skulls, collisionLayer2);
     this.physics.add.collider(skulls, collisionLayer3);
     this.physics.add.collider(skulls, collisionLayer4);
-    this.physics.add.collider(rangedAttack, collisionLayer);
-    this.physics.add.collider(rangedAttack, collisionLayer2);
-    this.physics.add.collider(rangedAttack, collisionLayer3);
-    this.physics.add.collider(rangedAttack, collisionLayer4);
     this.physics.add.collider(
-      rangedAttack,
+      this.rangedAttack,
+      collisionLayer,
+      this.handleRangedAttackColliderCollision,
+      undefined,
+      this,
+    );
+    this.physics.add.collider(
+      this.rangedAttack,
+      collisionLayer2,
+      this.handleRangedAttackColliderCollision,
+      undefined,
+      this,
+    );
+    this.physics.add.collider(
+      this.rangedAttack,
+      collisionLayer3,
+      this.handleRangedAttackColliderCollision,
+      undefined,
+      this,
+    );
+    this.physics.add.collider(
+      this.rangedAttack,
+      collisionLayer4,
+      this.handleRangedAttackColliderCollision,
+      undefined,
+      this,
+    );
+    this.physics.add.collider(
+      this.rangedAttack,
+      collisionLayer4,
+      this.handleRangedAttackColliderCollision,
+      undefined,
+      this,
+    );
+    this.physics.add.collider(
+      this.rangedAttack,
       skulls,
       this.hanldeRangedAttackSkullCollision,
       undefined,
@@ -98,10 +132,19 @@ export default class Game extends Phaser.Scene {
       this,
     );
   }
+  private handleRangedAttackColliderCollision(
+    obj1: Phaser.GameObjects.GameObject,
+    obj2: Phaser.GameObjects.GameObject,
+  ) {
+    this.rangedAttack.killAndHide(obj1);
+  }
   private hanldeRangedAttackSkullCollision(
     obj1: Phaser.GameObjects.GameObject,
-    obj2: Phaser.GameObjects.GameObjects,
-  ) {}
+    obj2: Phaser.GameObjects.GameObject,
+  ) {
+    this.rangedAttack.killAndHide(obj1);
+    this.rangedAttack.kill(obj2);
+  }
   private handlePlayerSkullCollision(
     obj1: Phaser.GameObjects.GameObject,
     obj2: Phaser.GameObjects.GameObject,

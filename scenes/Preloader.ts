@@ -10,6 +10,22 @@ export default class Preloader extends Phaser.Scene {
     this.load.image('tiles1', 'tiles/HillsTiles.png');
     this.load.tilemapTiledJSON('hills', 'tiles/FirstHillsMap.json');
     this.load.atlas('Knight', 'character/Knight.png', 'character/Knight.json');
+    this.load.image(
+      'rangedAttack-down',
+      'rangedAttack/schword-ranged-attack-down1.png',
+    );
+    this.load.image(
+      'rangedAttack-up',
+      'rangedAttack/schword-ranged-attack-up1.png',
+    );
+    this.load.image(
+      'rangedAttack-left',
+      'rangedAttack/schword-ranged-attack-left1.png',
+    );
+    this.load.image(
+      'rangedAttack-right',
+      'rangedAttack/schword-ranged-attack-right1.png',
+    );
 
     this.load.atlas(
       'skull',
