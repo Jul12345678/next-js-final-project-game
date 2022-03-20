@@ -69,18 +69,18 @@ export default class Game extends Phaser.Scene {
     // Enemy
     createSkullAnimation(this.anims);
 
-    const skulls = this.physics.add.group({
+    this.skulls = this.physics.add.group({
       classType: Skull,
       createCallback: (go) => {
         const skulGo = go as Skull;
         skulGo.body.onCollide = true;
       },
     });
-    skulls.get(160, 120, 'skull');
-    this.physics.add.collider(skulls, collisionLayer);
-    this.physics.add.collider(skulls, collisionLayer2);
-    this.physics.add.collider(skulls, collisionLayer3);
-    this.physics.add.collider(skulls, collisionLayer4);
+    this.skulls.get(160, 120, 'skull');
+    this.physics.add.collider(this.skulls, collisionLayer);
+    this.physics.add.collider(this.skulls, collisionLayer2);
+    this.physics.add.collider(this.skulls, collisionLayer3);
+    this.physics.add.collider(this.skulls, collisionLayer4);
     this.physics.add.collider(
       this.rangedAttack,
       collisionLayer,
@@ -118,14 +118,14 @@ export default class Game extends Phaser.Scene {
     );
     this.physics.add.collider(
       this.rangedAttack,
-      skulls,
+      this.skulls,
       this.hanldeRangedAttackSkullCollision,
       undefined,
       this,
     );
     //  End of enemy
     this.playerSkullsCollider = this.physics.add.collider(
-      skulls,
+      this.skulls,
       this.eK,
       this.handlePlayerSkullCollision,
       undefined,
@@ -136,14 +136,18 @@ export default class Game extends Phaser.Scene {
     obj1: Phaser.GameObjects.GameObject,
     obj2: Phaser.GameObjects.GameObject,
   ) {
-    this.rangedAttack.killAndHide(obj1);
+    // this.rangedAttack.killAndHide(obj1);
+    let rangedAttack = obj1;
+    rangedAttack.destroy();
   }
   private hanldeRangedAttackSkullCollision(
     obj1: Phaser.GameObjects.GameObject,
     obj2: Phaser.GameObjects.GameObject,
   ) {
     this.rangedAttack.killAndHide(obj1);
-    this.rangedAttack.kill(obj2);
+    this.skulls.killAndHide(obj2);
+    let skulls = obj2 as Skull;
+    skulls.destroy();
   }
   private handlePlayerSkullCollision(
     obj1: Phaser.GameObjects.GameObject,
