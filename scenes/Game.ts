@@ -3,6 +3,8 @@ import './character/Elk';
 import Phaser from 'phaser';
 import { createCharacterAnimation } from './character/CharacterAnimation';
 import EK from './character/Elk';
+import { createChestAnimation } from './chests/ChestsAndCoins';
+import Chest from './collectible/Chest';
 import { createSkullAnimation } from './enemies/EnemyAnimations';
 import Skull from './enemies/Skull';
 import { events } from './events/Events';
@@ -20,10 +22,12 @@ export default class Game extends Phaser.Scene {
 
   preload() {
     this.cursors = this.input.keyboard.createCursorKeys();
+    this.input.keyboard.addKeys('W,S,A,D');
   }
 
   create() {
     this.scene.run('game-ui');
+    createChestAnimation(this.anims);
     const map = this.make.tilemap({ key: 'hills' });
 
     this.rangedAttack = this.physics.add.group({
@@ -32,17 +36,34 @@ export default class Game extends Phaser.Scene {
 
     const tilesetHills = map.addTilesetImage('Hills', 'tiles1');
     const tilesetPlants = map.addTilesetImage('Plants', 'tiles2');
-    const allLayers = [tilesetHills, tilesetPlants];
+    const tilesetChest = map.addTilesetImage('chest1', 'tiles3');
+    const tilesetGoodChest = map.addTilesetImage('goodChest1', 'tiles4');
+    const allLayers = [
+      tilesetHills,
+      tilesetPlants,
+      tilesetChest,
+      tilesetGoodChest,
+    ];
 
     map.createLayer('Ground', allLayers);
     map.createLayer('Ground2', allLayers);
 
-    // map.createLayer('Layer1', allLayers);
-    // map.createLayer('Layer2', allLayers);
-    // map.createLayer('Layer3', allLayers);
-    // map.createLayer('Layer4', allLayers);
     map.createLayer('Stairs', allLayers);
     map.createLayer('Door', allLayers);
+    map.createLayer('Chests', allLayers);
+    map.createLayer('Skulls', allLayers);
+
+    const chest = this.physics.add.staticGroup({
+      classType: Chest,
+    });
+    const objectsLayer = map.getObjectLayer('Chests');
+    objectsLayer.objects.forEach((chestObject) => {
+      chest.get(
+        chestObject.x,
+        chestObject.y! - chestObject.height! * 0.5,
+        'chestsandcoins',
+      );
+    });
 
     const aboveLayer = map.createLayer('Above', allLayers);
     aboveLayer.setDepth(20);
@@ -56,8 +77,12 @@ export default class Game extends Phaser.Scene {
     collisionLayer4.setCollisionByProperty({ collision: true });
     collisionLayer3.setCollisionByProperty({ collision: true });
 
+    // const chest = this.add.sprite(100, 100, 'chestsandcoins', 'chest1.png');
+    // this.time.delayedCall(1000, () => {
+    //   chest.play('open-chest');
+    // });
     createCharacterAnimation(this.anims);
-    this.eK = this.add.ek(128, 128, 'EK');
+    this.eK = this.add.ek(15, 1009, 'EK');
     this.eK.setRangedAttack(this.rangedAttack);
     this.eK.setDepth(10);
 
@@ -65,7 +90,13 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(this.eK, collisionLayer2);
     this.physics.add.collider(this.eK, collisionLayer3);
     this.physics.add.collider(this.eK, collisionLayer4);
-
+    this.physics.add.collider(
+      this.eK,
+      chest,
+      this.handlePlayerChestCollision,
+      undefined,
+      this,
+    );
     // Enemy
     createSkullAnimation(this.anims);
 
@@ -76,7 +107,11 @@ export default class Game extends Phaser.Scene {
         skulGo.body.onCollide = true;
       },
     });
-    this.skulls.get(160, 120, 'skull');
+    const skullLayer = map.getObjectLayer('Skulls');
+    skullLayer.objects.forEach((skullsObject) => {
+      this.skulls.get(skullsObject.x, skullsObject.y, 'skull');
+    });
+    // this.skulls.get(160, 120, 'skull');
     this.physics.add.collider(this.skulls, collisionLayer);
     this.physics.add.collider(this.skulls, collisionLayer2);
     this.physics.add.collider(this.skulls, collisionLayer3);
@@ -132,6 +167,14 @@ export default class Game extends Phaser.Scene {
       this,
     );
   }
+  private handlePlayerChestCollision(
+    obj1: Phaser.GameObjects.GameObject,
+    obj2: Phaser.GameObjects.GameObject,
+  ) {
+    const chest = obj2 as Chest;
+
+    this.eK.setChest(chest);
+  }
   private handleRangedAttackColliderCollision(
     obj1: Phaser.GameObjects.GameObject,
     obj2: Phaser.GameObjects.GameObject,
@@ -145,9 +188,9 @@ export default class Game extends Phaser.Scene {
     obj2: Phaser.GameObjects.GameObject,
   ) {
     this.rangedAttack.killAndHide(obj1);
-    this.skulls.killAndHide(obj2);
-    let skulls = obj2 as Skull;
-    skulls.destroy();
+    // this.skulls.killAndHide(obj2);
+    let skullLayer = obj2 as Skull;
+    skullLayer.destroy();
   }
   private handlePlayerSkullCollision(
     obj1: Phaser.GameObjects.GameObject,

@@ -1,3 +1,4 @@
+import { createConnection } from 'net';
 import Phaser from 'phaser';
 import { events } from './events/Events';
 
@@ -7,6 +8,14 @@ export default class Ui extends Phaser.Scene {
     super({ key: 'game-ui' });
   }
   create() {
+    this.add.image(7, 24, 'chestsandcoins', 'Coin1.png');
+    const coinDisplay = this.add.text(14, 16, '0', {
+      // fontSize: '12',
+    });
+
+    events.on('coins-count', (coins: number) => {
+      coinDisplay.text = coins.toLocaleString();
+    });
     this.hearts = this.add.group({
       classType: Phaser.GameObjects.Image,
     });
@@ -22,6 +31,7 @@ export default class Ui extends Phaser.Scene {
     events.on('character-health', this.handleCharacterHp, this);
     this.events.on(Phaser.Scenes.Events.SHUTDOWN, () => {
       events.off('character-health', this.handleCharacterHp, this);
+      events.off('coins-count');
     });
   }
   private handleCharacterHp(hp: number) {

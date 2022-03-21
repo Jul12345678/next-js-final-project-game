@@ -34,6 +34,11 @@ export default class Preloader extends Phaser.Scene {
     );
     this.load.image('heart-empty', 'Ui/Heartempty.png');
     this.load.image('heart-full', 'Ui/Heartfull.png');
+    this.load.atlas(
+      'chestsandcoins',
+      'rewards/chestsAndCoins.png',
+      'rewards/chestsAndCoins.json',
+    );
   }
   create() {
     this.scene.start('game');

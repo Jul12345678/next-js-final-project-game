@@ -1,4 +1,6 @@
 import Phaser from 'phaser';
+import Chest from '../collectible/Chest';
+import { events } from '../events/Events';
 
 declare global {
   namespace Phaser.GameObjects {
@@ -24,6 +26,8 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
   private damaged = 0;
   private _hp = 4;
   private rangedAttack?: Phaser.Physics.Arcade.Group;
+  private activeChest?: Chest;
+  private _coins = 0;
 
   get hp() {
     return this._hp;
@@ -42,7 +46,9 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
   setRangedAttack(rangedAttack: Phaser.Physics.Arcade.Group) {
     this.rangedAttack = rangedAttack;
   }
-
+  setChest(chest: Chest) {
+    this.activeChest = chest;
+  }
   handleHit(dir: Phaser.Math.Vector2) {
     if (this._hp <= 0) {
       return;
@@ -167,25 +173,37 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
       return;
     }
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
-      this.shootRangedAttack();
+      if (this.activeChest) {
+        const coins = this.activeChest.open();
+        this._coins += coins;
+        events.emit('coins-count', this._coins);
+      } else {
+        this.shootRangedAttack();
+      }
+
       return;
     }
     const speed = 100;
+    const leftDown = cursors.left?.isDown;
+    const rightDown = cursors.right?.isDown;
+    const downDown = cursors.down?.isDown;
+    const upDown = cursors.up?.isDown;
 
-    if (cursors.left?.isDown) {
+    if (leftDown) {
       this.anims.play('Knight-direction-right', true);
       this.setVelocity(-speed, 0);
       this.scaleX = -1;
-      this.body.offset.x = 35;
-    } else if (cursors.right?.isDown) {
+      this.body.offset.x = 36;
+    } else if (rightDown) {
       this.anims.play('Knight-direction-left', true);
       this.setVelocity(speed, 0);
       this.scaleX = -1;
-      this.body.offset.x = 35;
-    } else if (cursors.up?.isDown) {
+      this.body.offset.x = 36;
+      this.body.offset.y = 33;
+    } else if (upDown) {
       this.anims.play('Knight-direction-up', true);
       this.setVelocity(0, -speed);
-    } else if (cursors.down?.isDown) {
+    } else if (downDown) {
       this.anims.play('Knight-direction-down', true);
       this.setVelocity(0, speed);
     } else {
@@ -194,6 +212,9 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
       this.anims.play(parts.join('-'));
       this.setVelocity(0, 0);
       this.setDepth(10);
+    }
+    if (leftDown || rightDown || upDown || downDown) {
+      this.activeChest = undefined;
     }
   }
 }
