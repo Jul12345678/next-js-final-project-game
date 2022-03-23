@@ -1,12 +1,4 @@
 { "compressionlevel":-1,
- "editorsettings":
-    {
-     "export":
-        {
-         "format":"json",
-         "target":"FirstHillsMap444449991.json"
-        }
-    },
  "height":64,
  "infinite":false,
  "layers":[

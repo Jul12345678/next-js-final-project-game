@@ -13,6 +13,11 @@ export default class Ui extends Phaser.Scene {
       // fontSize: '12',
     });
 
+    // const deathText = this.add.text(100, 100, 'Game Over');
+    // events.off('Death Text', (DEATH: string) => {
+    //   deathText.text = DEATH.toLocaleUpperCase();
+    // });
+
     events.on('coins-count', (coins: number) => {
       coinDisplay.text = coins.toLocaleString();
     });
@@ -41,6 +46,15 @@ export default class Ui extends Phaser.Scene {
         heart.setTexture('heart-full');
       } else {
         heart.setTexture('heart-empty');
+      }
+      if (hp <= 0) {
+        const deathText = this.add.text(105, 120, 'Game Over');
+        events.on('Game Over', (DEATH: string) => {
+          deathText.text = DEATH.toLocaleUpperCase();
+          events.on('pointerdown', () => this.scene.start('prepreloader'));
+        });
+      } else {
+        //  events.on('pointerdown', () => this.scene.start('prepreloader'));
       }
     });
   }

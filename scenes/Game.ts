@@ -82,7 +82,7 @@ export default class Game extends Phaser.Scene {
     //   chest.play('open-chest');
     // });
     createCharacterAnimation(this.anims);
-    this.eK = this.add.ek(15, 1009, 'EK');
+    this.eK = this.add.ek(30, 1000, 'EK');
     this.eK.setRangedAttack(this.rangedAttack);
     this.eK.setDepth(10);
 

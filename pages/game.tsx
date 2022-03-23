@@ -1,7 +1,9 @@
 import 'phaser';
 import Phaser from 'phaser';
+import DeathText from '../scenes/DeathText';
 import Game from '../scenes/Game';
 import Preloader from '../scenes/Preloader';
+import PrePreloader from '../scenes/PrePreloader';
 import Ui from '../scenes/Ui';
 
 const gameConfig = {
@@ -14,10 +16,10 @@ const gameConfig = {
     default: 'arcade',
     arcade: {
       gravity: { y: 0 },
-      debug: true,
+      debug: false,
     },
   },
-  scene: [Preloader, Game, Ui],
+  scene: [PrePreloader, Preloader, Game, Ui, DeathText],
   scale: {
     zoom: 3,
   },

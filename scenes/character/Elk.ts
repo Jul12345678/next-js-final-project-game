@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import DeathText from '../../scenes/DeathText';
 import Chest from '../collectible/Chest';
 import { events } from '../events/Events';
 
@@ -28,6 +29,7 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
   private rangedAttack?: Phaser.Physics.Arcade.Group;
   private activeChest?: Chest;
   private _coins = 0;
+  private deathText?: Phaser.Scene;
 
   get hp() {
     return this._hp;
@@ -43,6 +45,7 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
 
     this.play('Knight-direction-down');
   }
+
   setRangedAttack(rangedAttack: Phaser.Physics.Arcade.Group) {
     this.rangedAttack = rangedAttack;
   }
@@ -57,15 +60,11 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
       return;
     }
 
-    //  this.setVelocity(dir.x, dir.y);
-    //  this.setTint(0xff0000);
-    //  this.health = Health.DAMAGE;
-    //  this.damaged = 0;
-
     --this._hp;
     if (this._hp <= 0) {
       // die
       this.health = Health.DEAD;
+      // this.anims.pause();
       this.anims.play('Knight-death', true);
     } else {
       this.setVelocity(dir.x, dir.y);
