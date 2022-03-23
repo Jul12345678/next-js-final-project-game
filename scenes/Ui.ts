@@ -51,10 +51,10 @@ export default class Ui extends Phaser.Scene {
         const deathText = this.add.text(105, 120, 'Game Over');
         events.on('Game Over', (DEATH: string) => {
           deathText.text = DEATH.toLocaleUpperCase();
-          events.on('pointerdown', () => this.scene.start('prepreloader'));
         });
       } else {
-        //  events.on('pointerdown', () => this.scene.start('prepreloader'));
+        this.input.on('pointerdown', () => this.scene.stop('game'));
+        this.input.on('pointerdown', () => this.scene.start('prepreloader'));
       }
     });
   }
