@@ -29,7 +29,15 @@ export default class Ek extends Phaser.Physics.Arcade.Sprite {
   private rangedAttack?: Phaser.Physics.Arcade.Group;
   private activeChest?: Chest;
   private _coins = 0;
-  private deathText?: Phaser.Scene;
+
+  // get score() {
+  //   return this._coins;
+  // }
+  //
+  // collectCoin() {
+  //   this._coins++;
+  //   events.emit('coins-count', this._coins);
+  // }
 
   get hp() {
     return this._hp;

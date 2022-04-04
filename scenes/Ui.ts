@@ -9,9 +9,7 @@ export default class Ui extends Phaser.Scene {
   }
   create() {
     this.add.image(7, 24, 'chestsandcoins', 'Coin1.png');
-    const coinDisplay = this.add.text(14, 16, '0', {
-      // fontSize: '12',
-    });
+    const coinDisplay = this.add.text(14, 16, '0');
 
     // const deathText = this.add.text(100, 100, 'Game Over');
     // events.off('Death Text', (DEATH: string) => {
