@@ -1,12 +1,18 @@
+import bcrypt from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { createUser } from '../../util/database';
 
-export default function registerHandler(
+export default async function registerHandler(
   request: NextApiRequest,
   response: NextApiResponse,
 ) {
   if (request.method === 'POST') {
     console.log(request.body);
-    response.json({ a: 'b' });
+    const passwordHash = await bcrypt.hash(request.body.password, 12);
+
+    const user = await createUser(request.body.username, passwordHash);
+
+    response.status(201).json({ user: user });
     return;
   }
   response.status(405).json({
