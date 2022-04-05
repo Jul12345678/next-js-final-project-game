@@ -1,12 +1,37 @@
 import bcrypt from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createUser } from '../../util/database';
+import { createUser, getUserByUsername } from '../../util/database';
 
 export default async function registerHandler(
   request: NextApiRequest,
   response: NextApiResponse,
 ) {
   if (request.method === 'POST') {
+    if (
+      typeof request.body.username !== 'string' ||
+      !request.body.username ||
+      typeof request.body.password !== 'string' ||
+      !request.body.password
+    ) {
+      response.status(400).json({
+        errors: [
+          {
+            message: 'Username or password not provided',
+          },
+        ],
+      });
+      return;
+    }
+    if (await getUserByUsername(request.body.username)) {
+      response.status(409).json({
+        errors: [
+          {
+            message: 'Username already exists',
+          },
+        ],
+      });
+      return;
+    }
     console.log(request.body);
     const passwordHash = await bcrypt.hash(request.body.password, 12);
 
