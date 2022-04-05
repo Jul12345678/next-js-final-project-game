@@ -11,6 +11,10 @@ const headerStyles = css`
   a + a {
     margin-left: 10px;
   }
+
+  > div:first-child {
+    margin-right: auto;
+  }
 `;
 
 export default function Header() {
